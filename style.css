@@ -41,7 +41,7 @@ header{
         align-items: center;
         justify-items: center;
         height: 20vh;
-        background-color: rgb(101, 176, 176);
+        background-color: rgb(175, 144, 105);
         .buttons{
             width: 30vw;
             height: 20vw;
@@ -85,7 +85,7 @@ header{
 .settings{
     width: 100vw;
     height: 100vh;
-    background-color: rgb(200, 175, 238);
+    background-color: rgb(175, 144, 105);
     header{
         position: relative;
         a{
@@ -166,3 +166,90 @@ header{
         border-radius: 1rem;
     }
 }
+
+#pausa{
+    .interfaz{
+        background-color: black;
+    }
+    animation-name: background-color-enter;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes background-color-enter{
+    0%{
+        background-color: rgb(175, 144, 105);
+        opacity: 1;
+        transition: 0.2s;
+        .interfaz{
+            background-color: rgb(175, 144, 105);
+            
+        }
+        
+    }
+    25%{
+        background-color: rgb(178, 164, 147);
+        opacity: 0.75;
+        transition: 0.2s;
+        .interfaz{
+            background-color: rgb(96, 86, 73);
+            
+        }
+    }
+    50%{
+        opacity: 0.5;
+        transition: 0.2s;
+        background-color: rgb(66, 66, 66);
+        .interfaz{
+            background-color: black;
+            
+        }
+    }
+    75%{
+        background-color: rgb(178, 164, 147);
+        opacity: 0.75;
+        transition: 0.2s;
+        .interfaz{
+            background-color: rgb(96, 86, 73);
+            
+        }
+    }
+    100%{
+        background-color: rgb(175, 144, 105);
+        opacity: 1;
+        transition: 0.2s;
+        .interfaz{
+            background-color: rgb(175, 144, 105);
+            
+        }
+        
+    }
+}
+
+@media (max-width: 480px){
+    header{
+        width: 10vh;
+        height: 20vw;
+        a{
+            width: 10vh;
+            height: 20vw;
+            svg{
+                width: 10vh;
+                height: 20vw;
+            }
+        }
+    }
+    #temporizador{
+        font-size: 3rem;
+    }
+    .valores{
+        #apuestaMinima{
+            font-size: 15rem;
+        }
+        #apuestaMaxima{
+            font-size: 15rem;
+        }
+    }
+}
+

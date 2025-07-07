@@ -32,6 +32,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
     loadDataFromSettings();
         
     //Timer
+    const divValores = document.getElementsByClassName("valores");
+    const divInterfaz = document.getElementsByClassName("interfaz")
+
     let tiempoInicial = settings.roundMinutes;
     let displayTemporizador;
     let cronometroMinutos = tiempoInicial-1;
@@ -49,17 +52,23 @@ document.addEventListener("DOMContentLoaded", ()=>{
             cronometroMinutos = tiempoInicial-1;
             cronometroSegundos = 59;
             pausarTemporizador = false;
+            divValores[0].id = "";
+            divValores[1].id = "";
+            divInterfaz[0].id = "";
             empezarTemporizador();
         }else if(pausarTemporizador){
             pausarTemporizador = false;
             botonEmpezarTemportizador.style.display = "none";
             pTemporizador.style.display = "block";
             pTemporizador.style.color = "white";
+            
             empezarTemporizador();
+            
         } else {
             clearInterval(displayTemporizador);
             pTemporizador.style.color = "yellow";
             pausarTemporizador = true;
+            
         }
     }
     
@@ -81,7 +90,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
             }
             if ((cronometroMinutos === 0) && (cronometroSegundos === 0)){
                 pausarTemporizador = true;
-                
+                divValores[0].id = "pausa";
+                divValores[1].id = "pausa";
+                divInterfaz[0].id = "pausa";
                 clearInterval(displayTemporizador);
                 audio.play()
                 setTimeout(()=>{audio.pause()},7500);
@@ -97,6 +108,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
         cronometroMinutos = tiempoInicial-1;
         cronometroSegundos = 59;
         actualizarTextoP();
+        divValores[0].id = "";
+        divValores[1].id = "";
+        divInterfaz[0].id = "";
     }
 
     const pMinBlind = document.getElementById("apuestaMinima");
